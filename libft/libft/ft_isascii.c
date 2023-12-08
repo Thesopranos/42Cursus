@@ -6,13 +6,13 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 13:28:18 by mertcaki          #+#    #+#             */
-/*   Updated: 2023/04/08 13:28:18 by mertcaki         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:16:07 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 128)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }

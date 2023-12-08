@@ -6,7 +6,7 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 14:13:41 by mertcaki          #+#    #+#             */
-/*   Updated: 2023/04/08 14:13:59 by mertcaki         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:25:12 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ char	*ft_strchr(const char *s, int c)
 	{
 		if (s[counter] == c)
 			return ((char *)s + counter);
+		counter++;
 	}
 	if (s[counter] == c)
 		return ((char *)s + counter);

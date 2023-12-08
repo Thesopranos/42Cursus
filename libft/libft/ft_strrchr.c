@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 13:15:57 by mertcaki          #+#    #+#             */
-/*   Updated: 2023/12/04 13:28:05 by mertcaki         ###   ########.fr       */
+/*   Created: 2023/12/04 14:34:17 by mertcaki          #+#    #+#             */
+/*   Updated: 2023/12/08 16:07:19 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+
+char	*ft_strrchr(const char *s, int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+    int	counter;
+
+    counter = 0;
+    while (s[counter])
+        counter++;
+    while (counter >= 0)
+    {
+        if (s[counter] == c)
+            return ((char *)s + counter);
+        counter--;
+    }
+    return (0);
 }
