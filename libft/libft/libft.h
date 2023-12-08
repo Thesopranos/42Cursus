@@ -6,7 +6,7 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 13:57:49 by mertcaki          #+#    #+#             */
-/*   Updated: 2023/12/08 20:26:43 by mertcaki         ###   ########.fr       */
+/*   Updated: 2023/12/08 20:42:43 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ void *ft_calloc(size_t count, size_t size);
 void ft_bzero(void *s, size_t n);
 void ft_putchar_fd(char c, int fd);
 void ft_putstr_fd(char const *s, int fd);
-
+void ft_putendl_fd(char const *s, int fd);
+void ft_putnbr_fd(int n, int fd);
 
 char *ft_strchr(const char *s, int c);
 char *ft_strnstr(const char *haystack, const char *needle, size_t len);
@@ -55,5 +56,11 @@ char **ft_split(char const *s, char c);
 size_t ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t ft_strlen(const char *s);
+
+t_list *ft_lstnew(void *content);
+void ft_lstadd_front(t_list **alst, t_list *new);
+int ft_lstsize(t_list *lst);
+t_list *ft_lstlast(t_list *lst);
+void ft_lstadd_back(t_list **alst, t_list *new);
 
 #endif
