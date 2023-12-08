@@ -6,7 +6,7 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 13:57:49 by mertcaki          #+#    #+#             */
-/*   Updated: 2023/12/08 20:16:43 by mertcaki         ###   ########.fr       */
+/*   Updated: 2023/12/08 20:26:43 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
+typedef struct s_list {
+void *content;
+struct s_list *next; } t_list;
 
 int	ft_isalnum(int c);
 int	ft_isalpha(int c);
