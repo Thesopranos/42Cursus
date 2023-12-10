@@ -6,7 +6,7 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 20:15:41 by mertcaki          #+#    #+#             */
-/*   Updated: 2023/12/10 03:57:40 by mertcaki         ###   ########.fr       */
+/*   Updated: 2023/12/10 04:43:11 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(const char *s, int fd)
 {
 	int	i;
 
+	if (s == NULL)
+		return ;
 	i = 0;
 	while (s[i])
 	{
