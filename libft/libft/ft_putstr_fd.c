@@ -6,21 +6,20 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 20:15:41 by mertcaki          #+#    #+#             */
-/*   Updated: 2023/12/08 20:16:16 by mertcaki         ###   ########.fr       */
+/*   Updated: 2023/12/10 03:57:40 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-void ft_putstr_fd(char const *s, int fd)
+void	ft_putstr_fd(const char *s, int fd)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (s[i])
-    {
-        ft_putchar_fd(s[i], fd);
-        i++;
-    }
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }
