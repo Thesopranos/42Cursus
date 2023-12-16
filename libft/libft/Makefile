@@ -6,12 +6,12 @@
 #    By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/06 16:59:09 by mertcaki          #+#    #+#              #
-#    Updated: 2023/12/16 13:42:52 by mertcaki         ###   ########.fr        #
+#    Updated: 2023/12/16 22:12:23 by mertcaki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libft.a
-CC	=	gcc
+CC	=	cc
 CFLAGS	=	-Wall -Wextra -Werror
 RM	=	rm -f
 SRC	=	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c\

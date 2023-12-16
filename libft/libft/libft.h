@@ -6,14 +6,14 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 13:57:49 by mertcaki          #+#    #+#             */
-/*   Updated: 2023/12/15 17:20:57 by mertcaki         ###   ########.fr       */
+/*   Updated: 2023/12/16 18:09:40 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
+# include <stddef.h>
 
 typedef struct s_list
 {
