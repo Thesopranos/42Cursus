@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/16 22:15:41 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/03/17 23:13:21 by mertcaki         ###   ########.fr       */
+/*   Created: 2024/03/15 23:17:40 by mertcaki          #+#    #+#             */
+/*   Updated: 2024/03/19 08:12:22 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static char	*ft_copy_to_stash(char *stash, char *buf)
 {
 	char	*result;
 
+	result = 0;
 	if (!stash && buf)
 	{
 		result = ft_strdup(buf);
@@ -28,15 +29,15 @@ static char	*ft_copy_to_stash(char *stash, char *buf)
 	return (result);
 }
 
-static int	ft_have_nl(char *str)
+static int	ft_have_nl(char *s)
 {
 	size_t	counter;
 
-	if (!str)
+	if (!s)
 		return (0);
 	counter = -1;
-	while (str[++counter] != '\0')
-		if (str[counter] == '\n')
+	while (s[++counter] != '\0')
+		if (s[counter] == '\n')
 			return (1);
 	return (0);
 }
@@ -75,7 +76,7 @@ static char	*ft_recreate_stash(char *stash)
 		return (NULL);
 	while (stash[counter] != '\n')
 		counter++;
-	if (stash[counter + 1] != '\0')
+	if (stash[counter + 1] == '\0')
 		return (ft_free_stash(&stash, 0));
 	result = ft_substr(stash, counter + 1, ft_strlen(stash));
 	if (!result)
@@ -100,7 +101,7 @@ char	*get_next_line(int fd)
 		return (ft_free_stash(&stash, 0));
 	while (bytes_read > 0)
 	{
-		bytes_read = read(fd, buf, BUFFER_SIZE);
+		bytes_read = read(fd, &buf, BUFFER_SIZE);
 		if ((bytes_read <= 0 && !stash) || bytes_read == -1)
 			return (ft_free_stash(&stash, 0));
 		buf[bytes_read] = '\0';

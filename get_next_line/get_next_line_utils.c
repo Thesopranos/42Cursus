@@ -5,90 +5,88 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/16 22:20:16 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/03/17 23:13:09 by mertcaki         ###   ########.fr       */
+/*   Created: 2024/03/15 23:18:31 by mertcaki          #+#    #+#             */
+/*   Updated: 2024/03/19 08:12:23 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const char *s)
 {
 	size_t	len;
 
 	len = 0;
-	while (str[len] != '\0')
-	{
+	while (s[len] != '\0')
 		len++;
-	}
 	return (len);
 }
 
-char	*ft_strdup(const char *str)
+char	*ft_strdup(const char *s)
 {
 	size_t	len;
 	char	*dup;
-	int		i;
+	int		counter;
 
-	i = 0;
-	len = ft_strlen(str) + 1;
+	counter = 0;
+	len = ft_strlen(s) + 1;
 	dup = (char *)malloc(len);
 	if (!dup)
 		return (NULL);
-	while (*str)
-		dup[i++] = *str++;
-	dup[i] = '\0';
+	while (*s)
+		dup[counter++] = *s++;
+	dup[counter] = '\0';
 	return (dup);
 }
 
-char	*ft_strjoin(const char *str1, const char *str2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len1;
 	size_t	len2;
-	size_t	i;
+	size_t	counter;
 	char	*new_str;
 
-	if (!str1 || !str2)
+	if (!s1 || !s2)
 		return (NULL);
-	len1 = ft_strlen(str1);
-	len2 = ft_strlen(str2);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
 	new_str = (char *)malloc(len1 + len2 + 1);
-	if (new_str)
+	if (!new_str)
 		return (NULL);
-	i = 0;
-	while (*str1)
-		new_str[i++] = *str1++;
-	while (*str2)
-		new_str[i++] = *str2++;
-	new_str[i] = '\0';
+	counter = 0;
+	while (*s1)
+		new_str[counter++] = *s1++;
+	while (*s2)
+		new_str[counter++] = *s2++;
+	new_str[counter] = '\0';
 	return (new_str);
 }
 
-char	*ft_substr(const char *str, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*result;
+	char	*res;
 	size_t	counter1;
 	size_t	counter2;
-	size_t	calculated_len;
+	size_t	calc_len;
 
-	calculated_len = ft_strlen(str);
-	if (!str || len <= 0)
+	calc_len = ft_strlen(s);
+	if (!s || len <= 0)
 		return (NULL);
-	if (len > calculated_len)
-		len = calculated_len;
-	result = (char *)malloc(sizeof(char) * (len + 1));
-	if (!result)
+	if (len > calc_len)
+		len = calc_len;
+	res = malloc(sizeof(char) * (len + 1));
+	if (!res)
 		return (NULL);
 	counter1 = start;
 	counter2 = 0;
-	while (counter1 < calculated_len && counter2 < len)
+	while (counter1 < calc_len && counter2 < len)
 	{
-		result[counter2] = str[counter1];
+		res[counter2] = s[counter1];
 		counter1++;
 		counter2++;
 	}
-	result[counter2] = '\0';
-	return (result);
+	res[counter2] = '\0';
+	return (res);
 }
 
 void	*ft_free_stash(char **stash, int create_line)
