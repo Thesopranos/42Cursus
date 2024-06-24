@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 23:31:31 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/05/14 17:35:35 by mertcaki         ###   ########.fr       */
+/*   Created: 2023/12/08 18:20:02 by mertcaki          #+#    #+#             */
+/*   Updated: 2023/12/10 03:57:17 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-void	ft_handle(int sig)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	static int	bit = 128;
-	static int	c = 0;
+	size_t	counter;
 
-	if (sig == SIGUSR1)
-		c = c + bit;
-	bit = bit / 2;
-	if (bit == 0)
+	counter = 0;
+	while (counter < n)
 	{
-		write(1, &c, 1);
-		bit = 128;
-		c = 0;
+		if (((unsigned char *)s)[counter] == (unsigned char)c)
+			return ((void *)s + counter);
+		counter++;
 	}
-}
-
-int	main(void)
-{
-	write(1, "PID:", 4);
-	ft_putnbr(getpid());
-	write(1, "\n", 1);
-	signal(SIGUSR1, ft_handle);
-	signal(SIGUSR2, ft_handle);
-	while (1)
-	{
-		pause();
-	}
+	return (NULL);
 }

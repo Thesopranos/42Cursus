@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 23:31:31 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/05/14 17:35:35 by mertcaki         ###   ########.fr       */
+/*   Created: 2023/12/08 20:08:40 by mertcaki          #+#    #+#             */
+/*   Updated: 2023/12/15 16:42:28 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
+#include <stdlib.h>
 
-void	ft_handle(int sig)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	static int	bit = 128;
-	static int	c = 0;
+	char	*str;
+	int		counter;
 
-	if (sig == SIGUSR1)
-		c = c + bit;
-	bit = bit / 2;
-	if (bit == 0)
+	counter = 0;
+	if (!s || !f)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!(str))
+		return (NULL);
+	while (s[counter])
 	{
-		write(1, &c, 1);
-		bit = 128;
-		c = 0;
+		str[counter] = f(counter, s[counter]);
+		counter++;
 	}
-}
-
-int	main(void)
-{
-	write(1, "PID:", 4);
-	ft_putnbr(getpid());
-	write(1, "\n", 1);
-	signal(SIGUSR1, ft_handle);
-	signal(SIGUSR2, ft_handle);
-	while (1)
-	{
-		pause();
-	}
+	str[counter] = '\0';
+	return (str);
 }

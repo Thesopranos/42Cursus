@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 23:31:31 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/05/14 17:35:35 by mertcaki         ###   ########.fr       */
+/*   Created: 2023/12/08 18:46:00 by mertcaki          #+#    #+#             */
+/*   Updated: 2023/12/15 16:54:45 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
+#include <stdlib.h>
 
-void	ft_handle(int sig)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	static int	bit = 128;
-	static int	c = 0;
+	char	*ptr;
+	size_t	s_len;
 
-	if (sig == SIGUSR1)
-		c = c + bit;
-	bit = bit / 2;
-	if (bit == 0)
-	{
-		write(1, &c, 1);
-		bit = 128;
-		c = 0;
-	}
-}
-
-int	main(void)
-{
-	write(1, "PID:", 4);
-	ft_putnbr(getpid());
-	write(1, "\n", 1);
-	signal(SIGUSR1, ft_handle);
-	signal(SIGUSR2, ft_handle);
-	while (1)
-	{
-		pause();
-	}
+	if (s == NULL)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (start > s_len)
+		return (ft_strdup(""));
+	if (s_len - start < len)
+		len = s_len - start;
+	ptr = malloc(len + 1);
+	if (ptr == NULL)
+		return (NULL);
+	ft_memcpy(ptr, s + start, len);
+	ptr[len] = '\0';
+	return (ptr);
 }

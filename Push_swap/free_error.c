@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   free_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 23:31:31 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/05/14 17:35:35 by mertcaki         ###   ########.fr       */
+/*   Created: 2024/06/07 15:28:32 by mertcaki          #+#    #+#             */
+/*   Updated: 2024/06/08 17:06:54 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "push_swap.h"
+#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_handle(int sig)
+void	ft_free_av(char **av, t_stack *stack, int control)
 {
-	static int	bit = 128;
-	static int	c = 0;
+	int	a;
 
-	if (sig == SIGUSR1)
-		c = c + bit;
-	bit = bit / 2;
-	if (bit == 0)
+	a = 0;
+	if (control == 2)
 	{
-		write(1, &c, 1);
-		bit = 128;
-		c = 0;
+		while (av[a])
+		{
+			free(av[a]);
+			a++;
+		}
+		free(av);
 	}
+	ft_error(stack);
 }
 
-int	main(void)
+void	ft_error(t_stack *stack)
 {
-	write(1, "PID:", 4);
-	ft_putnbr(getpid());
-	write(1, "\n", 1);
-	signal(SIGUSR1, ft_handle);
-	signal(SIGUSR2, ft_handle);
-	while (1)
-	{
-		pause();
-	}
+	free (stack->a);
+	free (stack->b);
+	free (stack);
+	write(2, "Error\n", 6);
+	exit (1);
 }

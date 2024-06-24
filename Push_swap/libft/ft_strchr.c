@@ -1,42 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 23:31:31 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/05/14 17:35:35 by mertcaki         ###   ########.fr       */
+/*   Created: 2023/04/08 14:13:41 by mertcaki          #+#    #+#             */
+/*   Updated: 2023/12/10 05:05:46 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
-
-void	ft_handle(int sig)
+char	*ft_strchr(const char *s, int c)
 {
-	static int	bit = 128;
-	static int	c = 0;
-
-	if (sig == SIGUSR1)
-		c = c + bit;
-	bit = bit / 2;
-	if (bit == 0)
+	while ((char)c != *s)
 	{
-		write(1, &c, 1);
-		bit = 128;
-		c = 0;
+		if (*s == 0)
+			return (0);
+		s++;
 	}
-}
-
-int	main(void)
-{
-	write(1, "PID:", 4);
-	ft_putnbr(getpid());
-	write(1, "\n", 1);
-	signal(SIGUSR1, ft_handle);
-	signal(SIGUSR2, ft_handle);
-	while (1)
-	{
-		pause();
-	}
+	return ((char *)s);
 }
