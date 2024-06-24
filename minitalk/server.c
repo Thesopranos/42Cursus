@@ -36,8 +36,5 @@ int	main(void)
 	signal(SIGUSR1, ft_handle);
 	signal(SIGUSR2, ft_handle);
 	while (1)
-	{
-		write(1, "x", 21);
 		pause();
-	}
 }
