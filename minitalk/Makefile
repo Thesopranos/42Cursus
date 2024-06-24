@@ -20,7 +20,7 @@ CLIENT			=	client
 CLIENT_SRC		=	client.c
 
 
-UTILS_SRC		=	utils.c
+UTILS_SRC		=	utils.c 
 
 CC				=	gcc
 RM 				=	rm -rf
@@ -45,4 +45,4 @@ fclean :
 
 re : fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re 
