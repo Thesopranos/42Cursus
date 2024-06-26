@@ -33,7 +33,7 @@ B_OBJ =	$(B:.c=.o)
 
 all:	$(NAME)
 
-bonus:	$(B_OBJ)
+bonus:	$(B_OBJ) 
 		ar rcs $(NAME) $(B_OBJ)
 
 $(NAME):	$(OBJ)

@@ -25,7 +25,6 @@ CFILES = 	ps_utils.c \
 	transactions_ab.c \
 	quick_sort.c \
 	free_error.c \
-	get_next_line.c \
 	push_swap.c \
 
 OBJS = $(CFILES:.c=.o)

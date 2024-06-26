@@ -25,8 +25,6 @@ typedef struct s_stack
 	int	size_b;
 }		t_stack;
 
-char	*get_next_line(int fd);
-
 void	bubble_sort(int *tmp_stack, int size);
 void	push_swap(char **av, int control);
 void	recheck(t_stack *stack, int size, char **av, int control);
