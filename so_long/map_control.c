@@ -18,7 +18,7 @@ void	ber_control(char *mapname)
 
 	len = ft_strlen(mapname);
 	if (mapname[len - 1] != 'r' || mapname[len - 2] != 'e' || mapname[len
-		- 3] != 'b' || mapname[len - 4] != '.')
+			- 3] != 'b' || mapname[len - 4] != '.')
 		error_message("False .ber extension");
 }
 
