@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   player_control.c                                   :+:      :+:    :+:   */
+/*   player_controls.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:27:32 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/07/02 16:10:50 by mertcaki         ###   ########.fr       */
+/*   Updated: 2024/07/04 11:44:12 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ static int	key_a_d(t_game *data, int movement)
 
 int	controls_working(int key, t_game *data)
 {
-	int com;
+	int	com;
 
 	if (key == ESC)
 		exit_point(data);

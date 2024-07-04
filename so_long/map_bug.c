@@ -6,7 +6,7 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:27:24 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/07/02 16:10:00 by mertcaki         ###   ########.fr       */
+/*   Updated: 2024/07/04 11:42:42 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,8 @@ static void	copy_map_free(char **copy_map, t_game *data)
 
 void	placeholder(t_game *data, int y, int x)
 {
-	char **copy_map;
-	int collectibles;
+	char	**copy_map;
+	int		collectibles;
 
 	collectibles = 0;
 	copy_map = create_copy_map(data);

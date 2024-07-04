@@ -6,7 +6,7 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:27:29 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/07/02 16:10:34 by mertcaki         ###   ########.fr       */
+/*   Updated: 2024/07/04 11:43:27 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,8 @@ static int	width_of_map(char *str)
 
 void	map_reading(t_game *data)
 {
-	int fd;
-	char *line;
+	int		fd;
+	char	*line;
 
 	data->index.i = 0;
 	data->index.j = 0;

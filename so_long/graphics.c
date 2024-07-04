@@ -6,7 +6,7 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:27:17 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/07/02 16:09:38 by mertcaki         ###   ########.fr       */
+/*   Updated: 2024/07/04 11:41:24 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void	images_in_game(t_game *data)
 
 void	adding_graphics(t_game *data)
 {
-	int height;
-	int width;
+	int	height;
+	int	width;
 
 	height = -1;
 	mlx_clear_window(data->mlxpointer, data->winpointer);
