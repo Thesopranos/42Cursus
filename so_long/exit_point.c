@@ -6,7 +6,7 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 23:27:14 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/07/04 11:40:39 by mertcaki         ###   ########.fr       */
+/*   Updated: 2024/07/04 13:48:30 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	mlx_images_free(t_game *data)
 
 int	exit_point(t_game *data)
 {
-	int line;
+	int	line;
 
 	line = 0;
 	if (data->winpointer)
