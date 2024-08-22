@@ -37,7 +37,7 @@ void	initialize_shell(t_shell **shell)
 
 void	get_readline(t_shell *shell)
 {
-	shell->cmd = readline("\e[32mminishell\e[35m$ \e[0m");
+	shell->cmd = readline("minishell");
 	if (shell->cmd && !is_space(shell->cmd))
 	{
 		free(shell->cmd);
