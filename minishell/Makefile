@@ -41,9 +41,9 @@ $(NAME): $(OBJ)
 	@echo "Compiling..."
 	@make -C $(LIBFT)
 	@cp libft/libft.a .
-	@printf "\e[35mLIBFT: \e[32mDONE \e[0m\n"
+	@printf "LIBFT: DONE\n"
 	@$(CC) $(FLAGS) $(CFLAGS) $(OBJ) libft.a -lreadline -o $@
-	@printf "\e[35mMINISHELL: \e[32mDONE\e[0m\n"
+	@printf "MINISHELL: DONE\n"
 
 .c.o:
 	@${CC} ${FLAGS} ${CFLAGS} -c $< -o ${<:.c=.o}
