@@ -79,7 +79,6 @@ void	start_parse(t_list *lex, t_shell *shell, int flags[3], char *str)
 				flags[0] = 0;
 			parse->next = initialize_parse((size_t)ft_lstsize(lex), &shell);
 			flags[1] = 0;
-			remove_quotes_in_parse(parse);
 			parse = parse->next;
 		}
 		else if (ft_strcmp(str, ""))
