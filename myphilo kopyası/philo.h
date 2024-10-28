@@ -6,7 +6,7 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:55:57 by beeren            #+#    #+#             */
-/*   Updated: 2024/10/27 22:54:51 by mertcaki         ###   ########.fr       */
+/*   Updated: 2024/10/27 23:03:54 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ typedef struct s_table
 	int				check_eat_count;//yeme sayısı kontrolü
 	int				num;// mutexleri destroy ederken mutex sayısını tutmak için.
 	u_int64_t		table_start_time;//başlangıç zamanı
-	pthread_mutex_t	m_with_eat;//mutex
 	pthread_mutex_t	*m_fork;//mutex
 	pthread_mutex_t	m_print;//mutex
 	pthread_mutex_t	m_die;//mutex

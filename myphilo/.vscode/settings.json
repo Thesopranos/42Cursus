@@ -1,0 +1,8 @@
+{
+	"editor.cursorWidth": 0,
+	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.cursorBlinking": "smooth",
+	"editor.cursorSurroundingLines": 10,
+	"editor.cursorSurroundingLinesStyle": "all",
+	"notebook.multiCursor.enabled": false
+}

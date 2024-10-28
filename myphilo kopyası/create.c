@@ -6,7 +6,7 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:29:32 by beeren            #+#    #+#             */
-/*   Updated: 2024/10/27 22:56:19 by mertcaki         ###   ########.fr       */
+/*   Updated: 2024/10/27 23:03:38 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,6 @@ int	mutex_init(t_table *table)
 	if (pthread_mutex_init(&table->m_time, NULL) != 0)//zaman için mutex.
 		return (write(2, "ERROR! Mutex init error.\n", 26),
 			table->num = table->num_of_philo + 2, 1);
-	if (pthread_mutex_init(&table->m_with_eat, NULL) != 0)//bu da aynı bok bilmiyom.
-		return (write(2, "ERROR! Mutex init error.\n", 26),
-			table->num = table->num_of_philo + 3, 1);//hata dönüşleri için table->num'u kullanacağız ilerde anlarsın zaten tüm mutexlerde var
 	return (0);
 }
 
@@ -73,7 +70,5 @@ int	destroy_mutex(t_table *table, int num, int flag)//mutexlerin destroy edildi�
 		pthread_mutex_destroy(&table->m_die);
 	if (i++ < num)
 		pthread_mutex_destroy(&table->m_time);
-	if (i++ < num)
-		pthread_mutex_destroy(&table->m_with_eat);
 	return (ft_no_malloc(table, flag));
 }

@@ -6,7 +6,7 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:34:08 by beeren            #+#    #+#             */
-/*   Updated: 2024/10/27 22:12:01 by mertcaki         ###   ########.fr       */
+/*   Updated: 2024/10/27 23:03:50 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,14 +102,11 @@ void	*philo_life(void *arg)
 		time_sleep(10);
 	while (!letsgo(philo->table, philo))//
 	{
-		pthread_mutex_lock(&philo->table->m_with_eat);//filozoflar yedi birer tur yemeyi kilitliyoruz sanırım burası bende çok yokmuş
 		if (philo->eat_count == philo->table->eat_limit)//5. argümana eşitse
 		{
 			philo->table->check_eat_count++;//check eat count'ı arttırıyoruz muhtemelen tüm filozoflar aynı yesin diye kontrol var öyleymiş.
-			pthread_mutex_unlock(&philo->table->m_with_eat);//yemeyi açıyoruz.
 			break ;
 		}
-		pthread_mutex_unlock(&philo->table->m_with_eat);//sanırım filozofa özel var bu mutex limite ulaşan filoya yedirtmiyoruz break ile döngüyü kırınca kilidi de açılmıyor.
 	}
 	return (NULL);
 }

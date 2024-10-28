@@ -6,7 +6,7 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:16:35 by beeren            #+#    #+#             */
-/*   Updated: 2024/10/27 22:23:11 by mertcaki         ###   ########.fr       */
+/*   Updated: 2024/10/27 23:03:43 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,12 @@ int	waiting_threads(t_table *table, int i)
 		i = -1;
 		while (++i < table->num_of_philo)//filozof sayısı kadar
 		{
-			pthread_mutex_lock(&table->m_with_eat);//filo_life'daki kontrolü kilitliyoruz.
 			if (dead_flag(table, &table->philo[i])//ölmesi gereken filozof var mı varsa öldüren fonksiyon.
 				|| table->check_eat_count == table->num_of_philo)//her filozofumuz yeme limitine ulaşmış mı kontrolü.
 			{
-				pthread_mutex_unlock(&table->m_with_eat);//kildini açıyoruz.
 				table->die_id = i + 1;//ölen filozofun id'sini atıyoruz
 				break ;
 			}
-			pthread_mutex_unlock(&table->m_with_eat);
 		}
 		if (i != table->num_of_philo)//masadaki filozoflardan biri ölünce i eşit olmuyor main process'de burada bitiyor. sanırım :)
 			break;
