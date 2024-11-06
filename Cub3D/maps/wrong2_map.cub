@@ -1,0 +1,23 @@
+R 800 500
+
+NO ./textures2/blue.xpm
+
+SO ./textures2/brick.xpm
+
+WE ./textures/Red10.xpm
+
+EA ./textures2/eagle.xpm
+
+S ./textures2/barrel.xpm
+
+F 0,0,0
+
+C 128,128,128
+
+111111
+1S000001
+100111111
+100111111
+100000001
+100000001
+111111111

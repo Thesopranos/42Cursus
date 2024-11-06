@@ -1,0 +1,23 @@
+R 640 480
+
+NO ./textures/blue.xpm
+
+SO ./textures/Slime.xpm
+
+WE ./textures/Red10.xpm
+
+EA ./textures/brown.xpm
+
+S ./textures/barrel.xpm
+
+F 187,210,225
+
+C 37,253,233
+
+11111
+10201
+110N1
+10001
+10001
+11111
+
