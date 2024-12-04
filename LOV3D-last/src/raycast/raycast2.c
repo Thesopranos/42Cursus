@@ -6,7 +6,7 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:39:07 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/11/10 15:39:07 by mertcaki         ###   ########.fr       */
+/*   Updated: 2024/11/18 23:07:47 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ void	ray_init(t_game *game)
 		return ((void)(ft_err("Error in check player \n", game, 1)));
 	game->p->posx = game->map->pos_x + 0.5;
 	game->p->posy = game->map->pos_y + 0.5;
-	game->p->player_speed = 0.08;
-	game->p->rot_speed = 0.04;
+	game->p->player_speed = 0.04;
+	game->p->rot_speed = 0.01;
 	game->p->w = false;
 	game->p->a = false;
 	game->p->s = false;

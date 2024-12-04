@@ -6,7 +6,7 @@
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:37:32 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/11/10 18:36:05 by mertcaki         ###   ########.fr       */
+/*   Updated: 2024/11/18 23:07:14 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define CUB3D_H
 
 # include <stdbool.h>
-# define WIDTH 800
-# define HEIGHT 600
+# define WIDTH 1200
+# define HEIGHT 800
 # define TEXWIDTH 64
 # define TEXHEIGHT 64
 # define KEY_EXIT 53
