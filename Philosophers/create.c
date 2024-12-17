@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 22:17:17 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/10/27 22:53:53 by mertcaki         ###   ########.fr       */
+/*   Created: 2024/10/29 12:40:54 by mertcaki          #+#    #+#             */
+/*   Updated: 2024/11/01 01:28:41 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,12 @@ int	mutex_init(t_table *table)
 	if (pthread_mutex_init(&table->m_time, NULL) != 0)
 		return (write(2, "ERROR! Mutex init error.\n", 26),
 			table->num = table->num_of_philo + 2, 1);
-	if (pthread_mutex_init(&table->m_with_eat, NULL) != 0)
+	if (pthread_mutex_init(&table->m_eat, NULL) != 0)
 		return (write(2, "ERROR! Mutex init error.\n", 26),
 			table->num = table->num_of_philo + 3, 1);
+	if (pthread_mutex_init(&table->m_with_eat, NULL) != 0)
+		return (write(2, "ERROR! Mutex init error.\n", 26),
+			table->num = table->num_of_philo + 4, 1);
 	return (0);
 }
 
@@ -73,6 +76,8 @@ int	destroy_mutex(t_table *table, int num, int flag)
 		pthread_mutex_destroy(&table->m_die);
 	if (i++ < num)
 		pthread_mutex_destroy(&table->m_time);
+	if (i++ < num)
+		pthread_mutex_destroy(&table->m_eat);
 	if (i++ < num)
 		pthread_mutex_destroy(&table->m_with_eat);
 	return (ft_no_malloc(table, flag));

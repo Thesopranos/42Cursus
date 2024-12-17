@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 22:12:31 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/10/27 22:15:48 by mertcaki         ###   ########.fr       */
+/*   Created: 2024/10/29 12:42:58 by mertcaki          #+#    #+#             */
+/*   Updated: 2024/11/01 01:42:22 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	lfork(t_table *table, t_philo *philo)
 		while (table->die_flag != 1)
 		{
 			pthread_mutex_unlock(&table->m_die);
-			usleep(100);
+			usleep (100);
 			pthread_mutex_lock(&table->m_die);
 		}
 		return (pthread_mutex_unlock(&table->m_die), 1);

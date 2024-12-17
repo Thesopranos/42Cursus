@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/27 22:18:20 by mertcaki          #+#    #+#              #
-#    Updated: 2024/10/27 22:19:30 by mertcaki         ###   ########.fr        #
+#    Created: 2024/10/29 12:42:04 by mertcaki          #+#    #+#              #
+#    Updated: 2024/11/01 01:45:23 by mertcaki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,9 +38,5 @@ clean:
 fclean: clean
 		$(RM) $(NAME)
 re: fclean all
-
-r: re
-f: fclean
-c: clean
 
 .phony: all clean fclean re

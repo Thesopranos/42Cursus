@@ -5,18 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 22:16:15 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/10/27 22:16:40 by mertcaki         ###   ########.fr       */
+/*   Created: 2024/10/29 12:43:21 by mertcaki          #+#    #+#             */
+/*   Updated: 2024/11/01 01:43:20 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-#include <stdlib.h>
 #include <sys/time.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 u_int64_t	get_time(void)
-
 {
 	struct timeval	time;
 

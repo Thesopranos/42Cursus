@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 22:02:57 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/10/27 22:53:58 by mertcaki         ###   ########.fr       */
+/*   Created: 2024/10/29 12:42:30 by mertcaki          #+#    #+#             */
+/*   Updated: 2024/11/01 01:28:37 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_table
 	int				die_flag;
 	u_int64_t		die_time;
 	int				die_id;
+	int				check_eat;
 	int				check_eat_count;
 	int				num;
 	u_int64_t		table_start_time;
@@ -45,6 +46,7 @@ typedef struct s_table
 	pthread_mutex_t	m_print;
 	pthread_mutex_t	m_die;
 	pthread_mutex_t	m_time;
+	pthread_mutex_t	m_eat;
 }	t_table;
 
 int			arg_ctrl(int ac, char **av);

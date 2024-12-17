@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mertcaki <mertcaki@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 22:07:55 by mertcaki          #+#    #+#             */
-/*   Updated: 2024/10/27 22:15:38 by mertcaki         ###   ########.fr       */
+/*   Created: 2024/10/29 12:39:22 by mertcaki          #+#    #+#             */
+/*   Updated: 2024/11/01 01:03:30 by mertcaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,14 @@ static int	ft_atoi(char *str)
 }
 
 int	arg_init(t_table *table, char **av)
+
 {
 	table->num_of_philo = ft_atoi(av[1]);
 	table->time_of_die = ft_atoi(av[2]);
 	table->time_of_eat = ft_atoi(av[3]);
 	table->time_of_sleep = ft_atoi(av[4]);
 	table->eat_limit = -1;
+	table->check_eat = 0;
 	table->check_eat_count = 0;
 	table->num = 0;
 	table->table_start_time = get_time();
